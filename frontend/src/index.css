@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500 dark:bg-gray-500;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+           dark:focus:ring-offset-gray-900 transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300
+           focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2
+           dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600
+           dark:focus:ring-offset-gray-900 transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-danger {
+    @apply px-4 py-2 bg-error-600 text-white rounded-lg hover:bg-error-700
+           focus:outline-none focus:ring-2 focus:ring-error-500 focus:ring-offset-2
+           dark:focus:ring-offset-gray-900 transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 
+           dark:border-gray-700 overflow-hidden;
+  }
+  
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-600 
+           rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 
+           dark:bg-gray-700 dark:text-white transition-colors duration-200;
+  }
+  
+  .badge-success {
+    @apply px-2 py-1 text-xs font-medium bg-success-100 text-success-700 
+           dark:bg-success-900/30 dark:text-success-400 rounded-full;
+  }
+  
+  .badge-warning {
+    @apply px-2 py-1 text-xs font-medium bg-warning-100 text-warning-700 
+           dark:bg-warning-900/30 dark:text-warning-400 rounded-full;
+  }
+  
+  .badge-error {
+    @apply px-2 py-1 text-xs font-medium bg-error-100 text-error-700 
+           dark:bg-error-900/30 dark:text-error-400 rounded-full;
+  }
+  
+  .badge-info {
+    @apply px-2 py-1 text-xs font-medium bg-info-100 text-info-700 
+           dark:bg-info-900/30 dark:text-info-400 rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
